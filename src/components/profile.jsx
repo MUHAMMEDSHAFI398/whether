@@ -1,6 +1,13 @@
 import Image from "next/image";
 
 const Profile = () => {
+  const formattedDate = new Date(Date.now()).toLocaleDateString("en-US", {
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
   return (
     <div className="flex gap-3">
       <Image
@@ -12,7 +19,7 @@ const Profile = () => {
       />
       <div className="flex flex-col">
         <p className="text-sm">Hi, Farooque</p>
-        <p className="text-lg">Sat, 11 May, 2024</p>
+        <p className="text-lg">{formattedDate}</p>
       </div>
     </div>
   );
